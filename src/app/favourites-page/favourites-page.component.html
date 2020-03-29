@@ -1,0 +1,16 @@
+<div class="container-sm" *ngIf="favourites.length; else unset">
+  <div class="row row-cols-3 row-cols-md-5" >
+    <div class="cart-item" *ngFor="let favour of favourites">
+      <img src="{{favour.img}}" class="card-img-top" alt="...">
+      <span>{{ favour.name }} </span>
+      <span>{{ favour.cost | currency:'₽' }}</span>
+      <button class="btn" (click)="unliked(favour.id)"> Не нравится </button>
+    </div>
+  </div>
+</div>
+
+<ng-template #unset>
+  <div class="alertText" >
+    <p>Здесь, пока что, ничего нет(((</p>
+  </div>
+</ng-template>

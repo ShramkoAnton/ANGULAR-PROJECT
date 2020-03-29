@@ -1,0 +1,33 @@
+<div class="container-sm" *ngIf="items.length; else unset">
+  <div class="row row-cols-3 row-cols-md-5">
+    <div class="cart-item" *ngFor="let item of items">
+      <img src="{{item.img}}" class="card-img-top" alt="...">
+      <span>{{ item.name }} </span>
+      <span>{{ item.cost }} ₽</span>
+      <button class="btn" (click)="removeFromBasket(item.id)">Убрать из корзины</button>
+    </div>
+
+  </div>
+<hr>
+<!--  <form class="forma">-->
+<!--    <div class="form-group">-->
+<!--      <span for="InputName">ФИО</span>-->
+<!--      <input type="email" class="form-control" id="InputName" aria-describedby="emailHelp">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <span for="InputPhone">Номер телефона</span>-->
+<!--      <input type="password" class="form-control" id="InputPhone">-->
+<!--    </div>-->
+<!--    <button type="button" class="btn btn-primary">Купить</button>-->
+<!--    <button class="btn" (click)="clearBasket()">Очистить корзину</button>-->
+<!--  </form>-->
+
+</div>
+
+<ng-template #unset>
+  <div class="alertText" >
+    <p>В корзине пока пусто(((</p>
+  </div>
+</ng-template>
+
+

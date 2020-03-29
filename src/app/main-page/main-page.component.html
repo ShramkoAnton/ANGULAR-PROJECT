@@ -1,0 +1,20 @@
+<div class="row row-cols-3 row-cols-md-5" style="margin: 2rem;">
+  <div class="card" *ngFor="let product of products">
+    <div *ngIf="product">
+      <img src="{{product.img}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-title">{{product.name}}</p>
+        <p class="card-title">{{product.cost}}  ₽</p>
+        <p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="setCurrentProduct(product)">
+            Купить
+          </button>
+          <button type="button" class="btn btn-primary" (click)="addToFavourites(product)"> Нравится </button>
+        </p>
+      </div>
+    </div>
+  </div>
+  <app-modal></app-modal>
+</div>
+
+

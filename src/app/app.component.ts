@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {CartShopService} from "./services/cart-shop.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'my-app';
+  items = [];
+
+  constructor(public CartShopService: CartShopService) {
+    this.items = this.CartShopService.items
+  }
+
 }
